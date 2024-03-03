@@ -32,7 +32,7 @@ public class CustomResponseEntityExceptionHandler extends ResponseEntityExceptio
     @ExceptionHandler(UnAuthorizedException.class)
     public ResponseEntity<ExceptionPayload> handleUnAuthorized(UnAuthorizedException exception, WebRequest request) {
         ExceptionPayload payload =
-                new ExceptionPayload("Invalid credentials", HttpStatus.UNAUTHORIZED);
+                new ExceptionPayload(exception.getMessage(), HttpStatus.UNAUTHORIZED);
         return
                 new ResponseEntity<ExceptionPayload>(payload, HttpStatus.UNAUTHORIZED);
     }

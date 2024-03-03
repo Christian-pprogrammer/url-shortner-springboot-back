@@ -77,7 +77,7 @@ public class UserService implements IUserService{
             return bt;
         }catch (AuthenticationException e) {
             System.out.println("Auth exception");
-            throw new UnAuthorizedException();
+            throw new UnAuthorizedException("Invalid login credentials");
         }
     }
 
